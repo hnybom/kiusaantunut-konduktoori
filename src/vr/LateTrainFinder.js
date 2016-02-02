@@ -11,7 +11,9 @@ exports.handleTrainData = function(trainData) {
     var oneMinuteAgo = moment(now).subtract(15, 'seconds');
     var oneMinuteFromNow = moment(now).add(15, 'seconds');
 
-    var lateData = trainData.map(function(item) {
+    var lateData = trainData.filter(function(train) {
+        return'Long-distance' === train.trainCategory;
+    }).map(function(item) {
         var lateFrom = item.timeTableRows.filter(function(row) {
             if(row.type === 'ARRIVAL') {
                 return moment(row.scheduledTime).isBetween(oneMinuteAgo, oneMinuteFromNow) && row.differenceInMinutes > 4;
