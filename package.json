@@ -1,0 +1,21 @@
+{
+  "name": "kiusaantunutkonduktoori",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnybom/kiusaantunut-konduktoori.git"
+  },
+  "author": "Henri Nybom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hnybom/kiusaantunut-konduktoori/issues"
+  },
+  "homepage": "https://github.com/hnybom/kiusaantunut-konduktoori#readme"
+}
