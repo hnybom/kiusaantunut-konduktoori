@@ -12,3 +12,9 @@ var client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
 
+
+exports.tweet = function(whatToSay) {
+    client.post('statuses/update', {status: whatToSay},  function(error, tweet, response){
+        if(error) console.log(error);
+    });
+}

@@ -22,9 +22,9 @@ http.get({
     })
 });
 
-exports.getStationData = function() {
-    return stationData;
-}
+exports.getStationData = function(stationShortCode) {
+    return stationData.find(function(station) { return station.stationShortCode === stationShortCode});
+};
 
 schedule.scheduleJob('*/1 * * * *', function() {
 
@@ -37,8 +37,12 @@ schedule.scheduleJob('*/1 * * * *', function() {
             body += d;
         });
         response.on('end', function () {
-            var trainInfo = JSON.parse(body);
-            lateTrain.handleTrainData(trainInfo);
+            try {
+                var trainInfo = JSON.parse(body);
+                lateTrain.handleTrainData(trainInfo);
+            } catch (err) {
+                console.log(err);
+            }
         });
     });
 });
