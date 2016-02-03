@@ -8,7 +8,6 @@ var digiApi = require('../vr/DigiTrarfficAPI.js');
 var tweeter = require('../twitter/Tweeter.js');
 
 exports.handleTrainData = function(trainData) {
-    console.log('jee: ' + digiApi.getStationData("ÄKI"));
     var now = new Date();
     var oneMinuteAgo = moment(now).subtract(15, 'seconds');
     var oneMinuteFromNow = moment(now).add(15, 'seconds');
